@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+<%-
+content = @post.content.split("\n").join("<br />").split("\r").join("")
+content = raw sanitize(simple_format(content), :tags => %w(br p) ) 
+-%>
+  <h1>His Rebuttal</h1>
+  <%= content %>
+</p>

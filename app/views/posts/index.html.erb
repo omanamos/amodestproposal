@@ -1,0 +1,33 @@
+<div id="main">
+	<h1>A Modest Rebuttal</h1>
+	<p>
+		This site it meant as a place to speak out against Scott Walker's Bill 11, which is designed to destroy the teacher's union.
+	</p>
+	<p id="notice"><%= notice %></p>
+	<table id="posts">
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+	<% @posts.each do |post| %>
+	<%-
+	content = post.owner.split("\n").join("<br />").split("\r").join("")
+	content = raw sanitize(simple_format(content), :tags => %w(br) ) 
+	-%>
+	  <tr>
+		<td>
+			<strong>Rebuttal by:</strong><br />
+			<%= content %>
+		</td>
+		<td class="c2"><%= post.views %> view<%= post.views == 1 ? "" : "s" %></td>
+		<td class="c3"><%= link_to 'Read It', post , :class => 'show_rebuttal'%></td>
+	  </tr>
+	<% end %>
+	</table>
+
+	<br />
+	<h2>Want To Make Your Voice Heard?</h2>
+	<%= link_to 'Post Your Own Rebuttal', new_post_path %>
+</div>
