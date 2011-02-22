@@ -16,6 +16,8 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
 	@post.views += 1;
 	@post.save
+	
+	@comment = Comment.new
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @post }
@@ -45,5 +47,17 @@ class PostsController < ApplicationController
         format.html { render :action => "new" }
       end
     end
+  end
+  
+  def create_comment
+	params[:comment][:post] = Post.find(Integer(params[:comment][:post]))
+  	comment = Comment.new(params[:comment])
+  	respond_to do |format|
+      if comment.save
+        format.html { redirect_to(:action => "show", :id => comment.post.id, :notice => 'Comment was successfully added.') }
+      else
+        format.html { redirect_to(:action => "show", :id => comment.post.id, :notice => 'Comment could not be added.') }
+      end
+    end  	
   end
 end

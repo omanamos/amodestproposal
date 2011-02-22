@@ -16,25 +16,25 @@
 	<h2>Rebuttals</h2>
 	<p id="notice"><%= notice %></p>
 	<table id="posts">
-	<tr>
-		<td></td>
-		<td></td>
-		<td></td>
-		<td></td>
-	</tr>
-	<% @posts.each do |post| %>
-	<%-
-	content = post.owner.split("\n").join("<br />").split("\r").join("")
-	content = raw sanitize(simple_format(content), :tags => %w(br) ) 
-	-%>
-	  <tr>
-		<td>
-			<strong>Rebuttal by:</strong><br />
-			<%= content %>
-		</td>
-		<td class="c2"><%= post.views %> view<%= post.views == 1 ? "" : "s" %></td>
-		<td class="c3"><%= link_to 'Read It', post , :class => 'iframe'%></td>
-	  </tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<% @posts.each do |post| %>
+		<%-
+		content = post.owner.split("\n").join("<br />").split("\r").join("")
+		content = raw sanitize(simple_format(content), :tags => %w(br) ) 
+		-%>
+		  <tr>
+			<td>
+				<strong>Rebuttal by:</strong><br />
+				<%= content %>
+			</td>
+			<td class="c2"><%= post.views %> view<%= post.views == 1 ? "" : "s" %></td>
+			<td class="c3"><%= link_to 'Read It', post , :class => 'iframe'%></td>
+		  </tr>
 	<% end %>
 	</table>
 

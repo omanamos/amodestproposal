@@ -2,6 +2,8 @@ Amodestproposal::Application.routes.draw do
   resources :posts
   
   root :to => "posts#index"
+  
+  match 'posts/comment/new' => 'posts#create_comment'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

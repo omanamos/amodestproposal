@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+<h1>Rebuttal</h1>
 <p>
 <%-
 content = @post.content.split("\n").join("<br />").split("\r").join("")
@@ -6,3 +6,46 @@ content = raw sanitize(simple_format(content), :tags => %w(br p) )
 -%>
   <%= content %>
 </p>
+
+<h1>Comments</h1>
+<p id="notice"><%= notice %></p>
+<table id="comments">
+	<% @post.comments.each do |comment| %>
+	<%-
+	content = comment.content.split("\n").join("<br />").split("\r").join("")
+	content = raw sanitize(simple_format(content), :tags => %w(br) ) 
+	-%>
+	  <tr class="comment_content">
+		<td><%= content %></td>
+	  </tr>
+	  <tr class="comment_name">
+	  	<td>Posted by: <%= comment.name %></td>
+	  </tr>
+<% end %>
+</table>
+	
+<h2>Add a Comment</h1>
+<%= form_for(@comment, :url => 'comment/new') do |f| %>
+  <% if @comment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@comment.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @comment.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+  	<input type="hidden" name="comment[post]" value="<%= @post.id %>" />
+  	<%= f.label :name, "Your Name" %><br />
+  	<%= f.text_field :name %><br />
+    <%= f.label :content, "Your Comment" %><br />
+    <%= f.text_area :content %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

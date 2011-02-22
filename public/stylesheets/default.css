@@ -26,3 +26,15 @@ div#main{
 		table#posts td.c2{
 			padding: 10px 20px;
 		}
+	table#comments{
+		width: 90%;
+	}
+		table#comments tr.comment_content td{
+			width: 90%;
+		}
+		table#comments tr.comment_name td{
+			padding-left: 20px;
+			width: 90%;
+			font-size: 8pt;
+			border-bottom: 1px solid #888;
+		}
