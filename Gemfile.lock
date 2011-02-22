@@ -36,9 +36,18 @@ GEM
       activerecord (>= 2.2)
       redhillonrails_core (>= 1.0.4.1)
     builder (2.1.2)
+    configuration (1.2.0)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    heroku (1.17.16)
+      json (~> 1.4.6)
+      launchy (~> 0.3.2)
+      rest-client (>= 1.4.0, < 1.7.0)
     i18n (0.4.1)
+    json (1.4.6)
+    launchy (0.3.7)
+      configuration (>= 0.0.5)
+      rake (>= 0.8.1)
     mail (2.2.7)
       activesupport (>= 2.3.6)
       mime-types
@@ -66,6 +75,8 @@ GEM
       thor (~> 0.14.0)
     rake (0.8.7)
     redhillonrails_core (1.0.5)
+    rest-client (1.6.1)
+      mime-types (>= 1.16)
     thor (0.14.3)
     treetop (1.4.8)
       polyglot (>= 0.3.1)
@@ -77,5 +88,6 @@ PLATFORMS
 DEPENDENCIES
   authlogic
   automatic_foreign_key
+  heroku
   mysql2
   rails (= 3.0.1)
