@@ -10,9 +10,15 @@ div#main{
 		margin-bottom: 30px;
 	}
 	div#facebook{
+		height: 300px;
 		margin-top: 17px;
 		float: right;
 	}
+		div#facebook iframe{
+			float: left;
+			clear: left;
+			margin-bottom: 10px;
+		}
 	table#posts{
 		width: 50%;
 		overflow: hidden;
