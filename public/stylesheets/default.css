@@ -3,13 +3,18 @@ div#main{
 	min-height: 300px;
 	margin: auto;
 	overflow: hidden;
-	text-align: center;
 	background-color: #ccc;
 	padding: 20px;
 }
+	h1{
+		margin-bottom: 30px;
+	}
+	div#facebook{
+		margin-top: 17px;
+		float: right;
+	}
 	table#posts{
 		width: 50%;
-		margin: auto;
 		overflow: hidden;
 	}
 		table#posts td.c2{
