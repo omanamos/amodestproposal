@@ -5,6 +5,7 @@ div#main{
 	overflow: hidden;
 	text-align: center;
 	background-color: #ccc;
+	padding: 20px;
 }
 	table#posts{
 		width: 50%;
