@@ -14,13 +14,14 @@
 	<div id="educate">
 		<h2>Educate Yourself</h2>
 		<a title="Senate Bill 11" class="iframe" href="http://docs.google.com/viewer?url=http%3A%2F%2Fblazing-night-527.heroku.com%2Fresources%2Fbill11.pdf">Senate Bill 11</a> - 144 pages long<br />
-		<a title="Senate Bill 11" class="iframe" href="http://docs.google.com/viewer?url=http%3A%2F%2Fblazing-night-527.heroku.com%2Fresources%2FbillSummary.pdf&embedded=true">Analysis of the Bill</a> - 48 pages long - Written by the Legislative Fiscal Bureau of Wisconsin<br />
 		<a title="Senate Bill 11" class="iframe" href="http://docs.google.com/viewer?url=http%3A%2F%2Fblazing-night-527.heroku.com%2Fresources%2FbillSummarySimple.pdf&embedded=true">Summary of the Bill</a> - 2 pages long - From the Governor's Office<br />
+		<a title="Senate Bill 11" class="iframe" href="http://docs.google.com/viewer?url=http%3A%2F%2Fblazing-night-527.heroku.com%2Fresources%2FbillSummary.pdf&embedded=true">Analysis of the Bill</a> - 48 pages long - Written by the Legislative Fiscal Bureau of Wisconsin<br />
 	</div>
 	<h2>Rebuttals</h2>
 	<p id="notice"><%= notice %></p>
 	<table id="posts">
 		<tr>
+			<td></td>
 			<td></td>
 			<td></td>
 			<td></td>
@@ -37,6 +38,7 @@
 				<%= content %>
 			</td>
 			<td class="c2"><%= post.views %> view<%= post.views == 1 ? "" : "s" %></td>
+			<td class="c2"><%= post.comments.length %> comment<%= post.comments.length == 1 ? "" : "s" %></td>
 			<td class="c3"><%= link_to 'Read It', post , :class => 'iframe'%></td>
 		  </tr>
 	<% end %>
